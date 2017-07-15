@@ -14,7 +14,7 @@ const mongoose       = require("mongoose");
 
 const index          = require('./routes/index');
 const authController = require('./routes/authController');
-
+const whereWeWork  = require('./routes/where-we-work');
 let app = express();
 
 // Connection to DB
@@ -54,7 +54,7 @@ app.use(auth.setCurrentUser);
 
 app.use('/', authController);
 app.use('/', index);
-
+app.use('/', whereWeWork);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

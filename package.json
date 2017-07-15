@@ -25,5 +25,18 @@
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.3.0"
-  }
+  },
+  "description": "Our app will connect volunteers with various skills with nursing homes. Theme: “Donate your time and improve senior’s life”.",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PetraSp/volunteers-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PetraSp/volunteers-project/issues"
+  },
+  "homepage": "https://github.com/PetraSp/volunteers-project#readme"
 }
