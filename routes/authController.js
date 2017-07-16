@@ -11,6 +11,7 @@ router.get('/signup', function(req, res, next) {
   res.render('auth/signup', { "message": req.flash("error") });
 });
 
+
 router.post("/signup", (req, res, next) => {
   var username = req.body.username;
   var password = req.body.password;
