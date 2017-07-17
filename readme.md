@@ -6,6 +6,3 @@ Our app will connect volunteers with various skills with nursing homes. Theme: â
 $ npm install
 ```
 You need to setup the config file in `config.js`
-
-
-

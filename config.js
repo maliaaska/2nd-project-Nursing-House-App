@@ -1,6 +1,8 @@
 let config = {
 	portDB: 27017,
-	databaseName: "templateExpress"
+
+	databaseName: "volunteers"
 };
+
 
 module.exports = config;

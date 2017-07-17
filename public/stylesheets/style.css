@@ -27,13 +27,13 @@ a {
 	margin: 20px 0;
 }
 
-.login,
-.signup {
+.login {
 	width: 380px;
 	padding-top: 50px;
 	margin: 0 auto;
 }
 
+<<<<<<< HEAD
 .background-img {
 	position: absolute;
 	width: 100%;
@@ -45,3 +45,69 @@ a {
  height: 500px;
  width: 100%;
 }
+=======
+
+.signup1 {
+	display: inline-block;
+	width: 380px;
+	padding-top: 50px;
+	margin: 40px 50px 0 80px;
+}
+
+.signup2 {
+	display: inline-block;
+	width: 380px;
+	padding-top: 50px;
+	margin: 40px 50px 0 80px;
+}
+
+.h1-custom {
+	margin-top: 70px;
+}
+
+.social-media {
+	background: #67BCDB;
+	color: #fafafa;
+	display: block;
+	height: auto;
+	min-height: 50px;
+	overflow: hidden;
+	text-align: center;
+	width: 100%;
+}
+
+.social-media ul {
+	clear: left;
+	float: left;
+	left: 50%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-align: center;
+}
+
+.social-media li {
+	display: block;
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	right: 50%;
+}
+
+.social-media ul li img {
+	margin: 20px;
+}
+
+
+.copyright {
+	font-size: 15px;
+	font-style: italic;
+	margin: 50px 0 0 0;
+	text-align: center;
+	width: 100%;
+}
+}
+>>>>>>> 2e8d24e0803d0b433dd595e448fc24e87df3c9f8
