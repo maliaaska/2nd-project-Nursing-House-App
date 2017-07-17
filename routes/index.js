@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/secret', auth.checkLoggedIn('You must be login', '/login'), function(req, res, next) {
+  console.log('user', req.user);
   res.render('secret', { user: JSON.stringify(req.user) });
 });
 

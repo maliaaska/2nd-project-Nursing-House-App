@@ -27,11 +27,25 @@ a {
 	margin: 20px 0;
 }
 
-.login,
-.signup {
+.login {
 	width: 380px;
 	padding-top: 50px;
 	margin: 0 auto;
+}
+
+
+.signup1 {
+	display: inline-block;
+	width: 380px;
+	padding-top: 50px;
+	margin: 40px 50px 0 80px;
+}
+
+.signup2 {
+	display: inline-block;
+	width: 380px;
+	padding-top: 50px;
+	margin: 40px 50px 0 80px;
 }
 
 .h1-custom {

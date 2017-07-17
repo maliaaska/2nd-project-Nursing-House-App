@@ -1,8 +1,12 @@
-<div class="signup">
+<div class="signup1">
   <div class="panel panel-default">
-    <div class="panel-heading">Sign Up</div>
+    <div class="panel-heading"><strong>Create a volunteer account</strong></div>
     <div class="panel-body">
       <form action="/signup" method="POST">
+      <div class="form-group">
+          <label for="fullnameInput">First and last name</label>
+          <input type="fullname" class="form-control" id="fullname" placeholder="Full name" name="fullname">
+        </div>
         <div class="form-group">
           <label for="usernameInput">Username</label>
           <input type="email" class="form-control" id="username" placeholder="Username" name="username">
@@ -17,8 +21,38 @@
         <% if ( message != "" ) { %>
           <div class="alert alert-danger" role="alert"><%= message %></div>
         <% } %>
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-      </form>  
+        <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+      </form>
+    </div>
+  </div>
+  
+</div>
+
+<div class="signup2">
+  <div class="panel panel-default">
+    <div class="panel-heading"><strong>Find volunteers where you need help</strong></div>
+    <div class="panel-body">
+      <form action="/signup" method="POST">
+        <div class="form-group">
+          <label for="fullnameInput">Name of the institution</label>
+          <input type="fullname" class="form-control" id="fullname" placeholder="Full name" name="fullname">
+        </div>
+        <div class="form-group">
+          <label for="usernameInput">Username</label>
+          <input type="email" class="form-control" id="username" placeholder="Username" name="username">
+        </div>
+        <div class="form-group">
+          <label for="passwordInput">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+        </div>
+        <!-- <% if (typeof(message) != "undefined") { %> -->
+          <!-- <div class="alert alert-danger" role="alert"><%= message %></div> -->
+        <!-- <% } %> -->
+        <% if ( message != "" ) { %>
+          <div class="alert alert-danger" role="alert"><%= message %></div>
+        <% } %>
+        <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+      </form>
     </div>
   </div>
   
