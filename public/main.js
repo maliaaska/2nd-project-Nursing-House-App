@@ -72,3 +72,6 @@ title: "Residència de Gent Gran Amma Diagonal"
 }
 
 startMap();
+
+
+//TEST
