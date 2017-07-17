@@ -4,6 +4,7 @@ const LocalStrategy = require("passport-local").Strategy;
 // const FbStrategy    = require('passport-facebook').Strategy;
 const User          = require('../models/user');
 
+
 // require("dotenv").config();
 // const FACEBOOK_CLIENT_ID    = process.env.FACEBOOK_CLIENT_ID;
 // const FACEBOOK_CLIENTSECRET = process.env.FACEBOOK_CLIENTSECRET;

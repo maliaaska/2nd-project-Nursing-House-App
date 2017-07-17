@@ -33,19 +33,10 @@ a {
 	margin: 0 auto;
 }
 
-
 .signup1 {
-	display: inline-block;
 	width: 380px;
 	padding-top: 50px;
-	margin: 40px 50px 0 80px;
-}
-
-.signup2 {
-	display: inline-block;
-	width: 380px;
-	padding-top: 50px;
-	margin: 40px 50px 0 80px;
+	margin: 0 auto;
 }
 
 .h1-custom {
@@ -88,7 +79,6 @@ a {
 	margin: 20px;
 }
 
-
 .copyright {
 	font-size: 15px;
 	font-style: italic;
@@ -96,4 +86,8 @@ a {
 	text-align: center;
 	width: 100%;
 }
+
+.hidden {
+	visibility: none;
 }
+
