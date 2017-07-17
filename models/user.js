@@ -16,8 +16,8 @@ const userSchema = new Schema({
     imageUrl: String,
   	role: {
     	type: String,
-    	enum : ['EDITOR', 'ADMIN'],
-    	default : 'ADMIN'
+    	enum : ['user', 'nHome'],
+    	default : 'user'
   	}
 	}, {
   	timestamps: { createdAt: "created_at", updatedAt: "updated_at" }

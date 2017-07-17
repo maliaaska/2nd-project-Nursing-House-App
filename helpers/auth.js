@@ -24,7 +24,7 @@ module.exports = {
 
 	checkCredentials: function(role) {
 	  return function(req, res, next) {
-	    if (req.user.role === role) {
+	    if (req.user.role === role || req.nhome.role === role) {
 	      return next(); 
 	    } else {
 	    	req.flash('error', "you don't have permission" );
