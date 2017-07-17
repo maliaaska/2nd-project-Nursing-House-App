@@ -7,8 +7,9 @@ function startMap() {
     {
       zoom: 13,
       center: BCN
-    }
-  );
+    });
+
+
   var NursingHome1 = new google.maps.Marker({
   position: {
   	lat: 41.394421,
@@ -16,7 +17,9 @@ function startMap() {
   },
   map: map,
   title: "I'm here"
-});
+  });
+
+
 var NursingHome2 = new google.maps.Marker({
 position: {
   lat: 41.395513,
@@ -69,6 +72,7 @@ position: {
 map: map,
 title: "Residència de Gent Gran Amma Diagonal"
 });
+
 }
 
 startMap();
