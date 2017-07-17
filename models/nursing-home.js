@@ -4,6 +4,10 @@ const Schema   = mongoose.Schema;
 const nhomesSchema = new Schema({
     username: String,
     password: String,
+    fullname: {
+      type: String,
+      required: true
+    },
     role: {
       type: String,
       enum : ['EDITOR', 'ADMIN'],
