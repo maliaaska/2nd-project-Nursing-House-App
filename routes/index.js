@@ -14,6 +14,7 @@ router.get('/where-we-work', function(req, res, next) {
   res.render('where-we-work');
 });
 
+
 //to display the volunteers database
 router.get('/volunteersDatabase', function (req, res, next) {
   User.find({}, (err, users) => {
@@ -22,6 +23,8 @@ router.get('/volunteersDatabase', function (req, res, next) {
     res.render('volunteersDatabase', {users});
   });
 });
+
+
 
 router.get('/secret', auth.checkLoggedIn('You must be login', '/login'), function(req, res, next) {
   console.log('user', req.user);

@@ -1,7 +1,9 @@
 function startMap() {
   var BCN = {
+
   	lat: 41.384433,
   	lng: 2.176923};
+
     var map = new google.maps.Map(
     document.getElementById('map'),
     {
@@ -13,29 +15,23 @@ function startMap() {
 
   var NursingHome1 = new google.maps.Marker({
   position: {
+
   	lat: 41.392589,
+
     lng: 2.184317
   },
   map: map,
   title: "Grup Ballesol",
-  description: "La residencia de ancianos Ballesol Almogávares está ubicado en la calle Almogávares de Barcelona y cuenta con rápidas y fáciles comunicaciones de transporte público tanto para las personas mayores como para sus familiares. Tiene una superficie total de 9.181 m2 con una capacidad de 194 plazas residenciales tanto para personas con plena autonomía como para personas en situación de dependencia física y/o psíquica."
+  description: "La residencia de ancianos Ballesol Almogávares está ubicado en la calle Almogávares de Barcelona y cuenta con rápidas y fáciles comunicaciones de transporte público tanto para las personas mayores como para sus familiares. Tiene una superficie total de 9.181 m2 con una capacidad de 194 plazas residenciales tanto para personas con plena autonomía como para personas en situación de dependencia física y/o psíquica.",
+  contact: ["91 736 40 52"]
+
+
   });
 
   NursingHome1.addListener("click", function(){
     console.log("hello");
   });
 
-  // var infoWindow = new google.maps.infoWindow({
-  //   content: "<b>This is Nursing house</b>"
-  // });
-  //
-  // google.maps.event.addListener(NursingHome1, 'click', function() {
-  //   infoWindow.open(map, NursingHome1);
-  // });
-  // google.maps.event.addListener(NursingHome1, 'click', function() {
-  // infowindow.setContent(contentString + '<br>' + '<button class="btn btn-success"><a href="/users/' + response._id + '">Contact</a></button>');
-  //               infowindow.open(map, this);
-  //   });
 
   var NursingHome2 = new google.maps.Marker({
   position: {
@@ -43,7 +39,8 @@ function startMap() {
     lng: 2.187789
   },
   map: map,
-  title: "Residencia La Trobada"
+  title: "Residencia La Trobada",
+  description: "Residencia La trobada es un Centro Geriátrico adaptado para personas válidas, dependientes y todo tipo de demencias. En un ambiente familiar y lleno de calor de hogar, usted puede disfrutar de todos los cuidados que necesita, tener una asistencia sanitaria al instante, llevar una dieta alimentaria de acuerdo a sus necesidades y, lo más importante de todo, vivir dentro de una gran familia teniendo a los suyos muy cerca de usted. En La Trobada encontrará ese estilo de vida que usted necesita.",
   });
 
   var NursingHome3 = new google.maps.Marker({
@@ -52,6 +49,11 @@ function startMap() {
     lng: 2.170988
   },
   map: map,
+  description: `Gran Vida es una residencia para la tercera edad ubicada en el corazón de Barcelona, junto a Plaza Cataluña, que pertenece al grupo Gran Vida.
+Este centro es especial por su ubicación en el centro de la ciudad condal, y por la belleza de su edificio.
+Tiene más de 25 años de referencia, muy conocida en la zona y en Barcelona, y muchas familias confían en ella para que sus familiares estén como en casa. Es un lugar de tranquilidad en medio del caos de Barcelona.
+Es una de nuestras residencias más acogedoras y familiares. Gran Vida habla por sí misma.
+Este centro cuenta con 17 plazas.`,
   title: "Residéncia La Comtal - Group Gran"
   });
 
@@ -63,14 +65,21 @@ function startMap() {
     lng: 2.156834
   },
   map: map,
+  description: `La residencia de ancianos SARquavitae La Salut Josep Servat nace gracias a los esfuerzos conjuntos del Colegio Oficial de Médicos de Barcelona (COMB) y SARquavitae. Se trata de un edificio de nueva construcción con amplios espacios interiores y exteriores totalmente equipados para su máximo confort. Nuestros residentes pueden pasear y disfrutar del aire libre por su magnífico jardín.
+
+La residencia de ancianos tiene una distribución pensada para asegurar un cuidado personalizado. Cuenta con distintas unidades de convivencia para que los residentes puedan vivir según sus necesidades. Las unidades son independientes unas de las otras y disponen de su propio comedor y sala de estar.`,
   title: "SARquavitae Residencia de ancianos La Salut Josep Servat"
   });
+
   var NursingHome5 = new google.maps.Marker({
   position: {
     lat: 41.395279,
     lng: 2.147650
   },
   map: map,
+  description:`Persohome es una agencia de servicios de ayuda a domicilio formada por un equipo de especialistas en la selección de personal doméstico.
+Nuestro objetivo es seleccionar para usted a las profesionales que mejor se adapten a las necesidades de su hogar, de su negocio y/o de su familia.
+Para su tranquilidad, estamos avalados por el Servei d’Ocupació de Catalunya, garantía de que actuamos siempre dentro del marco de la legalidad. Además, todos nuestros servicios están garantizados y respaldados por contrato.`,
   title: "Persohome"
   });
 
@@ -80,19 +89,21 @@ function startMap() {
     lng: 2.176575
   },
   map: map,
+  description:`Residència Roger de Flor: La nostra filosofía, i el nostre objectiu principal és assegurar el benestar i la qualitat de vida de les persones grans.`,
   title: "Residència Geriàtrica Roger de Flor"
   });
 
   var NursingHome7 = new google.maps.Marker({
   position: {
-    lat: 41.404035,
-    lng: 2.195458
+    lat: 41.375437,
+    lng: 2.128196
   },
   map: map,
-  title: "Residència de Gent Gran Amma Diagonal"
+  description:`Trabajamos cada día para conseguir, como principal objetivo, que nuestros mayores disfruten de la máxima comodidad e independencia en sus casas. No sólo pensando en los usuarios de la tercera edad sinó también en sus familiares y cuidadores. `,
+  title: "Seniorsants"
   });
 
-  // var pin = new google.maps.Marker({ position, map });
+
   var nursingHomes = [NursingHome1, NursingHome2, NursingHome3, NursingHome4, NursingHome5, NursingHome6, NursingHome7];
 
   var homeFunction = function (item) {
@@ -103,13 +114,17 @@ function startMap() {
       infoWindow.open(map, this);
 
     });
+
+    google.maps.event.addListener(item, 'click', function() {
+      $("#nursingHome").text(item.description);
+      console.log(infoWindow);
+      infoWindow.setContent(item.title);
+      infoWindow.open(map, this);
+
+    });
   };
   nursingHomes.forEach(homeFunction);
 }
 
 
-
 startMap();
-
-
-//TEST

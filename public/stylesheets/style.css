@@ -102,3 +102,18 @@ a {
 
 .hidden {
 	visibility: none;
+
+}
+
+
+#map {
+	height: 400px;
+	width: 600px;
+}
+#nursingHome {
+	float: right;
+  margin: 0 -25px 0 0 ;
+	width : 400px;
+	margin-top: -405px;
+	text-align: justify;
+}
