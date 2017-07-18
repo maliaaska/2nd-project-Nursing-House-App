@@ -12,7 +12,6 @@ router.get('/signup', function(req, res, next) {
   res.render('auth/signup', { "message": req.flash("error") });
 });
 
-
 // router.post("/signup", (req, res, next) => {
 //   var username = req.body.username;
 //   var password = req.body.password;
@@ -111,6 +110,7 @@ router.post("/signup", (req, res, next) => {
   }
 
   User.findOne({ username }, "username", (err, user) => {
+    // if the user is different from null
     if (user !== null) {
       req.flash('error', 'The username already exists' );
       res.render("auth/signup", { message: req.flash("error") });
@@ -136,7 +136,7 @@ router.post("/signup", (req, res, next) => {
       } else {
        
         passport.authenticate("local")(req, res, function () {
-           res.render('secret-user', { user: req.user });
+           res.render('secret', { user: req.user });
         });
       }
     });
@@ -148,7 +148,7 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/secret-user",
+  successRedirect: "/secret",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
