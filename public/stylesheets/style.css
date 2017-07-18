@@ -27,12 +27,12 @@ a {
 	margin: 20px 0;
 }
 
-.login,
-.signup {
+.login {
 	width: 380px;
 	padding-top: 50px;
 	margin: 0 auto;
 }
+
 
 .background-img {
 	position: absolute;
@@ -44,4 +44,62 @@ a {
 #map {
  height: 500px;
  width: 100%;
+}
+
+.signup1 {
+	width: 380px;
+	padding-top: 50px;
+	margin: 0 auto;
+}
+
+.h1-custom {
+	margin-top: 70px;
+}
+
+.social-media {
+	background: #67BCDB;
+	color: #fafafa;
+	display: block;
+	height: auto;
+	min-height: 50px;
+	overflow: hidden;
+	text-align: center;
+	width: 100%;
+}
+
+.social-media ul {
+	clear: left;
+	float: left;
+	left: 50%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-align: center;
+}
+
+.social-media li {
+	display: block;
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	right: 50%;
+}
+
+.social-media ul li img {
+	margin: 20px;
+}
+
+.copyright {
+	font-size: 15px;
+	font-style: italic;
+	margin: 50px 0 0 0;
+	text-align: center;
+	width: 100%;
+}
+
+.hidden {
+	visibility: none;
 }

@@ -1,0 +1,4 @@
+git remote -v
+
+
+git remote set-url origin https://github.com/maliaaska/2nd-project-Nursing-House-App.git

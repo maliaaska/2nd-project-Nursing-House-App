@@ -5,10 +5,13 @@ var auth    = require('../helpers/auth');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Help & Enjoy' });
+
+  res.render('index');
+
 });
 
 router.get('/secret', auth.checkLoggedIn('You must be login', '/login'), function(req, res, next) {
+  console.log('user', req.user);
   res.render('secret', { user: JSON.stringify(req.user) });
 });
 
