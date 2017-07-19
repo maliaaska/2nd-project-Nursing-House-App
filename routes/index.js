@@ -50,7 +50,6 @@ router.get('/volunteersDatabase', function (req, res, next) {
 });
 
 
-
 router.get('/secret', auth.checkLoggedIn('You must be login', '/login'), function(req, res, next) {
   var user = req.user
   console.log('user', req.user);
