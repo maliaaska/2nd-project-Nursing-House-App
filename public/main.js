@@ -1,3 +1,4 @@
+
 function startMap() {
   var BCN = {
     lat: 41.384433,
