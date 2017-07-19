@@ -1,6 +1,7 @@
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-
+<% if(user.role === "user"){ %>
 <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
   <h4 class="form__title">Create a volunteer account</h4>
   
@@ -35,7 +36,7 @@
   </label>
   <textarea id='bio' class="form__textarea" name='bio'></textarea>
 
-  <label for='img' class="form__label">
+  <label for='img' class="form__label upload_img">
     <i class="material-icons">add_a_photo</i>
     <span class="title">Add a photo</span>
     <input type="file"/>
@@ -74,9 +75,78 @@
 
 
   <p class="agree">By clicking the button below, you agree to the Elder Helpers</p>
-  <button type="submit">Volunteer!</button>
+  <button class="button" type="submit">Volunteer!</button>
+</form>
+<% } else{ %>  
+<form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
+  <h4 class="form__title">Find volunteers where you need help</h4>
+  
+  <label for='age' class="form__label">
+    <span>Age</span>
+  </label>
+  <input type="number" id="age" name="age" class="form__input"/>
+
+  <label for="country" class='form__label'>
+    <span>Country</span>
+  </label>
+  <input type="text" id="country" name="country" class="form__input"/>
+  
+
+  <label for='email' class="form__label">
+    <span>Email</span>
+  </label>
+  <input type="email" id="email" name="email" class="form__input"/>
+
+  <label for='phone' class="form__label">
+    <span>Phone</span>
+  </label>
+  <input type="tel" id="phone" name="phone" class="form__input"/>
+
+  <label for='bio' class="form__label">
+    <span>Mini Biography</span>
+  </label>
+  <textarea id='bio' class="form__textarea" name='bio'></textarea>
+
+  <label for='img' class="form__label">Profile Photo:</label>
+  <input type="file" id="img" name="img" capture>
+  <img id="default-img" src="http://lorempixel.com/100/100" />
+
+  <section class="form-group checkbox-group">
+    <p>I am willing to</p>
+
+    <div>
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-0" name="activity-0">
+      <label for='activity-0' class="form__label">Help with Shopping</label> 
+    </div>
+    <div>
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-1" name="activity-1">
+      <label for='activity-1' class="form__label">Entertain: I can sing, dance, and make you laugh!</label> 
+    </div>    
+    <div>
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-2" name="activity-2">
+      <label for='activity-2' class="form__label">Reading</label>
+    </div>
+    <div>
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-3" name="activity-3">
+      <label for='activity-3' class="form__label">Help with cleaning</label>
+    </div>
+    <div>
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-4" name="activity-4">
+      <label for='activity-4' class="form__label">Help with cooking</label>
+    </div>
+    <div>
+      <input type="checkbox" class="form__input form__input--checkbox" id="activity-5" name="activity-5">
+      <label for='activity-5' class="form__label">Help out with making phone calls, writting letters</label>
+    </div>
+  </section>
+
+
+  <p class="agree">By clicking the button below, you agree to the Elder Helpers</p>
+  <button type="submit">Sign up</button>
 </form>
 
+
+<% } %>
 <!-- input tel js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.1.2/js/intlTelInput.min.js"></script>

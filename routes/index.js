@@ -16,59 +16,31 @@ router.get('/where-we-work', function(req, res, next) {
 
 
 router.get('/editProfileUser', function(req, res, next) {
-  res.render('editProfileUser');
+  var user = req.user
+  res.render('editProfileUser',{user});
 });
 
 
 router.post("/editProfileUser", (req, res, next) => {
-  var username = req.body.username;
-  var password = req.body.password;
-  var role = req.body.user;
-
-  if (username === "" || password === "") {
-    req.flash('error', 'Indicate username and password' );
-    res.render("auth/signup", { "message": req.flash("error") });
-    return;
+  // var userId = req.user
+  console.log("inside post", req.user._id)
+   var userId = req.user._id
+  var update = {
+    age: req.body.age,
+    
   }
+  console.log(update)
 
-  User.findOne({ username }, "username", (err, user) => {
+  User.findByIdAndUpdate({ _id: userId }, update, (err, user) => {
     // if the user is different from null
-    if (user !== null) {
-      req.flash('error', 'The username already exists' );
-      res.render("auth/signup", { message: req.flash("error") });
-      return;
+    if (err) {return next(err);
+    } else {
+      console.log("secret",user)
+      res.render("secret",{user})
     }
-
-    var salt     = bcrypt.genSaltSync(bcryptSalt);
-    var hashPass = bcrypt.hashSync(password, salt);
-
-    // any values you need from form need to be added here
-    var newUser = User({
-      username : username,
-      role: role,
-      fullname : req.body.fullname,
-      password: hashPass,
-    });
-
-    newUser.save((err) => {
-      if (err) {
-        console.log('error', err)
-        req.flash('error', 'The username already exists' );
-        res.render("auth/signup", { message: req.flash('error') });
-      } else {
-       
-        passport.authenticate("local")(req, res, function () {
-           res.render('secret', { user: req.user });
-        });
-      }
-    });
   });
 });
 
-
-router.get('/editProfileNhome', function(req, res, next) {
-  res.render('editProfileNhome');
-});
 
 //to display the volunteers database
 router.get('/volunteersDatabase', function (req, res, next) {
@@ -82,8 +54,9 @@ router.get('/volunteersDatabase', function (req, res, next) {
 
 
 router.get('/secret', auth.checkLoggedIn('You must be login', '/login'), function(req, res, next) {
+  var user = req.user
   console.log('user', req.user);
-  res.render('secret', { user: JSON.stringify(req.user) });
+  res.render('secret', {user});
 });
 
 router.get('/admin', auth.checkLoggedIn('You must be login', '/login'), auth.checkCredentials('ADMIN'), function(req, res, next) {
