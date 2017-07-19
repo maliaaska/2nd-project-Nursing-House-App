@@ -1,5 +1,15 @@
-<% 
-users.forEach(function(user){ %>
-  <p><%= user.username %> </p>  
-  <p><%= user.fullname %> </p>
-<%})%>
+<html>
+  <head>
+    <title>The list of people with BIG hearts</title>
+  </head>
+
+    <%
+    users.forEach(function(user){ %>
+      <div class="profile">
+      <p><%= user.username %> </p>
+      <p><%= user.fullname %> </p>
+      </div>
+    <%})%>
+  <body>
+</body>
+</html>

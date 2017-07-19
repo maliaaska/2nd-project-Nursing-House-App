@@ -1,3 +1,4 @@
+
 function startMap() {
   var BCN = {
 
