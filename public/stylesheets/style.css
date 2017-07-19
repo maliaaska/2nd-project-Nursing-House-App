@@ -8,15 +8,18 @@ a {
 */
 
 .page-wrapper {
-	margin: 0;
+
+}
+
+.form .form--edit-user {
+	margin: 0 auto;
 }
 
 .main {
-	padding-top: 50px;
+	padding-top: 10px;
 }
+
 .footer {
-	/*position: sticky;*/
-	/*position: absolute;*/
 	bottom: 0;
 	width: 100%;
 	/* Set the fixed height of the footer here */
@@ -158,9 +161,57 @@ a {
 
 .form .form__input .form__input--checkbox{}
 
+.form__title {
+	margin-top: 0;
+}
 
 
+$input-file-color: grey;
+$input-file-hover-color: black;
 
+input[type=file] {
+  outline: 0;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.label {
+  width: 120px;
+  height: 120px;
+  border: 2px dashed $input-file-color;
+  border-radius: 50%;
+  //background-image: url(http://lorempixel.com/400/200/);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  padding: 1.2em;
+  transition: 300ms border ease;
+  cursor: pointer;
+  text-align: center;
+
+ i {
+    display: block;
+    font-size: 42px;
+    padding-bottom: 16px;
+  }
+  
+  i,
+  .title {
+    color: $input-file-color;
+    transition: 200ms color;
+  }
+  
+  &:hover {
+    border: 2px solid $input-file-hover-color;
+    
+    i,
+    .title {
+     color: $input-file-hover-color; 
+    }
+  }
+}
 
 
 

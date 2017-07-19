@@ -1,3 +1,6 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
 <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
   <h4 class="form__title">Create a volunteer account</h4>
   
@@ -22,14 +25,23 @@
   </label>
   <input type="tel" id="phone" name="phone" class="form__input"/>
 
+  <label for='occupation' class="form__label">
+    <span>Occupation</span>
+  </label>
+  <input type="text" id="occupation" name="phone" class="form__input"/>
+
   <label for='bio' class="form__label">
     <span>Mini Biography</span>
   </label>
   <textarea id='bio' class="form__textarea" name='bio'></textarea>
 
-  <label for='img' class="form__label">Profile Photo:</label>
-  <input type="file" id="img" name="img" capture>
-  <img id="default-img" src="http://lorempixel.com/100/100" />
+  <label for='img' class="form__label">
+    <i class="material-icons">add_a_photo</i>
+    <span class="title">Add a photo</span>
+    <input type="file"/>
+  </label>
+  <!-- <input type="file" id="img" name="img" capture>
+  <img id="default-img" src="http://lorempixel.com/100/100" /> -->
 
   <section class="form-group checkbox-group">
     <p>I am willing to</p>
