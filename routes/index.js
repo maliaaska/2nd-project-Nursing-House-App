@@ -26,8 +26,15 @@ router.post("/editProfileUser", (req, res, next) => {
   console.log("inside post", req.user._id)
    var userId = req.user._id
   var update = {
+    img: req.body.img,
     age: req.body.age,
-    
+    phone: req.body.phone,
+    activity0: req.body.activity0,
+    activity1: req.body.activity1,
+    activity2: req.body.activity2,
+    activity3: req.body.activity3,
+    activity4: req.body.activity4,
+    activity5: req.body.activity4,
   }
   console.log(update)
 
