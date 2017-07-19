@@ -1,0 +1,5 @@
+git remote set-url origin <url>
+
+git remote -v
+
+git

@@ -110,10 +110,16 @@ a {
 	height: 400px;
 	width: 600px;
 }
-#nursingHome {
+#info-box {
 	float: right;
   margin: 0 -25px 0 0 ;
 	width : 400px;
 	margin-top: -405px;
+}
+#nursingHome {
+	/*float: right;
+  margin: 0 -25px 0 0 ;
+	width : 400px;
+	margin-top: -405px;*/
 	text-align: justify;
 }
