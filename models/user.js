@@ -13,6 +13,7 @@ const userSchema = new Schema({
     activities: String,
     location: String,
     availability: String,
+    location: { type: { type: String }, coordinates: [Number] },
     imageUrl: String,
   	role: {
     	type: String,
@@ -21,9 +22,13 @@ const userSchema = new Schema({
   	}
 	}, {
   	timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
-	}
-);
+	})
+
+ userSchema.index({ location: '2dsphere' });
 
 const User = mongoose.model("User", userSchema);
 
+
+
 module.exports = User;
+

@@ -10,7 +10,6 @@
     <input type="submit" value="Save">
   </form>
 </section>
-
 <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
   <h4 class="form__title">Create a volunteer account</h4>
   
@@ -51,9 +50,11 @@
       <input type="file">
     </label>
   </div>
+  <input id="addres" type="text">
+  <input id="latitude" type="text" name="latitude" placeholder="Latitude" >
+  <input id="longitude" type="text" name="longitude" placeholder="Longitude">
 
-
-
+<button class="button" type="submit">Volunteer!</button>
   <section class="form-group checkbox-group">
     <p>I am willing to</p>
 
@@ -83,7 +84,7 @@
     </div>
   </section>
   <p class="agree">By clicking the button below, you agree to the Elder Helpers</p>
-  <button class="button" type="submit">Volunteer!</button>
+  
 </form>
 
 
@@ -95,14 +96,19 @@
   <h4 class="form__title">Find volunteers where you need help</h4>
   
   <label for='NhomeName' class="form__label">
-    <span>Name of the institution</span>
+  <span>Name of the institution</span>
   </label>
   <input type="text" id="NhomeName" name="NhomeName" class="form__input"/>
 
-  <label for="address" class='form__label'>
-    <span>Address</span>
-  </label>
-  <input type="text" id="address" name="address" class="form__input"/>
+  <input type="text" name="name"        placeholder="name">
+  <input type="text" name="description" placeholder="description">
+    
+  <label>Address</label>
+  <input id="addres" type="text">
+  <input type="text" name="latitude" placeholder="Latitude" >
+  <input type="text" name="longitude" placeholder="Longitude">
+  <input type="submit" name="">
+
   
 
   <label for='email' class="form__label">
@@ -142,7 +148,12 @@
       $("#phone").intlTelInput();
       $("#country").countrySelect();
     </script>
-
+     <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7vXyvsKLbTZp0OXfVs3cF_b1kG32LwXc&libraries=places">
+    </script>
+    <script type="text/javascript" src="autocomplete.js"></script>
 
 
 <!-- <script type="text/javascript">
