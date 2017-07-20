@@ -1,15 +1,5 @@
 <% if(user.role === "user"){ %>
 
-
-<!--   <h2>Upload your photo</h2> -->
-  <section>
-  <h2>Upload your photo</h2>
-  <form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="text" name="name">
-    <input type="file" name="photo">
-    <input type="submit" value="Save">
-  </form>
-</section>
 <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
   <h4 class="form__title">Create a volunteer account</h4>
   
@@ -43,18 +33,27 @@
     <span>Mini Biography</span>
   </label>
   <textarea id='bio' class="form__textarea" name='bio'></textarea>
-  <div class="form-group">
+  
+  <section>
+    <h6>Upload your photo</h6>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="text" name="name">
+      <input type="file" name="photo">
+      <input type="submit" value="Save">
+    </form>
+  </section>
+
+  <!-- <div class="form-group">
     <label class="label">
       <i class="material-icons">add_a_photo</i>
       <span class="title">Add Photo</span>
       <input type="file">
     </label>
-  </div>
-  <input id="addres" type="text">
-  <input id="latitude" type="text" name="latitude" placeholder="Latitude" >
-  <input id="longitude" type="text" name="longitude" placeholder="Longitude">
+  </div> -->
+  
 
-<button class="button" type="submit">Volunteer!</button>
+<!-- <button class="button" type="submit">Volunteer!</button> -->
+
   <section class="form-group checkbox-group">
     <p>I am willing to</p>
 
@@ -84,6 +83,8 @@
     </div>
   </section>
   <p class="agree">By clicking the button below, you agree to the Elder Helpers</p>
+
+  <button class="button" type="submit">Volunteer!</button>
   
 </form>
 
@@ -94,51 +95,35 @@
  <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
 
   <h4 class="form__title">Find volunteers where you need help</h4>
-  
-  <label for='NhomeName' class="form__label">
-  <span>Name of the institution</span>
-  </label>
-  <input type="text" id="NhomeName" name="NhomeName" class="form__input"/>
 
-  <input type="text" name="name"        placeholder="name">
-  <input type="text" name="description" placeholder="description">
-    
-  <label>Address</label>
+  <label for='Address' class="form__label">
+  <span>Address</span>
+  </label>
   <input id="addres" type="text">
-  <input type="text" name="latitude" placeholder="Latitude" >
-  <input type="text" name="longitude" placeholder="Longitude">
-  <input type="submit" name="">
+  <input id="latitude" type="text" name="latitude" placeholder="Latitude" >
+  <input id="longitude" type="text" name="longitude" placeholder="Longitude">
 
-  
-
-  <label for='email' class="form__label">
-    <span>Contact Person name</span>
+  <label for='contact' class="form__label">
+    <span>Contact Person</span>
   </label>
-  <input type="email" id="email" name="email" class="form__input"/>
+  <input type="text" id="contact" name="contact" class="form__input"/>
 
-  <label for='phone' class="form__label">
-    <span>Phone</span>
+  <label for='contact-phone' class="form__label">
+    <span>Contact Person's phone number</span>
   </label>
-  <input type="tel" id="phone" name="phone" class="form__input"/>
+  <input type="tel" id="contact-phone" name="contact-phone" class="form__input"/>
 
-  <label for='bio' class="form__label">
-    <span>Mini Biography</span>
+  <label for='needs' class="form__label">
+    <span>Areas of need</span>
   </label>
-  <textarea id='bio' class="form__textarea" name='bio'></textarea>
-
-  <label for='img' class="form__label">Profile Photo:</label>
-  <input type="file" id="img" name="img" capture>
-  <img id="default-img" src="http://lorempixel.com/100/100" />
-
-  
-
+  <textarea id='needs' class="form__textarea" name='needs'></textarea>
 
   <p class="agree">By clicking the button below, you agree to the Elder Helpers</p>
   <button type="submit">Sign up</button>
 </form>
 
-
 <% } %>
+
 <!-- input tel js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.1.2/js/intlTelInput.min.js"></script>
@@ -155,30 +140,6 @@
     </script>
     <script type="text/javascript" src="autocomplete.js"></script>
 
-
-<!-- <script type="text/javascript">
-function validateForm() {
-if (isEmpty(document.getElementById('data_12').value.trim())) {
-alert('First name is required!');
-return false;
-}
-if (isEmpty(document.getElementById('data_13').value.trim())) {
-alert('Last name is required!');
-return false;
-}
-if (!validateEmail(document.getElementById('data_11').value.trim())) {
-alert('Email must be a valid email address!');
-return false;
-}
-return true;
-}
-function isEmpty(str) { return (str.length === 0 || !str.trim()); }
-function validateEmail(email) {
-var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
-return isEmpty(email) || re.test(email);
-}
-</script> -->
-<!-- input tel js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
   $("#profileImage").click(function(e) {
     $("#imageUpload").click();
