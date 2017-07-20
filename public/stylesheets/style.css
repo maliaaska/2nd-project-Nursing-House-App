@@ -157,10 +157,10 @@ a {
     cursor: pointer;
 }
 
+.pic-box {
 
-
-.form {
-
+	height: 50px;
+	width: 50px;
 }
 
 .form .form__label,
@@ -245,8 +245,8 @@ i {
 
 
 .profile {
-	height: 200px;
-	width: 200px;
+	height: 300px;
+	width: 300px;
 	float:left;
 	border-color: red;
 	border-style: solid;

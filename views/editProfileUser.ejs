@@ -4,7 +4,7 @@
 <% if(user.role === "user"){ %>
 <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
   <h4 class="form__title">Create a volunteer account</h4>
-  
+
   <label for='age' class="form__label">
     <span>Age</span>
   </label>
@@ -14,7 +14,7 @@
     <span>Country</span>
   </label>
   <input type="text" id="country" name="country" class="form__input"/>
-  
+
 
   <label for='email' class="form__label">
     <span>Email</span>
@@ -39,7 +39,7 @@
   <label for='img' class="form__label upload_img">
     <i class="material-icons">add_a_photo</i>
     <span class="title">Add a photo</span>
-    <input type="file" name="img" />
+    <input type="file" id="img" name="img" />
   </label>
   <!-- <input type="file" id="img" name="img" capture>
   <img id="default-img" src="http://lorempixel.com/100/100" /> -->
@@ -49,12 +49,12 @@
 
     <div>
       <input type="checkbox" class="form__input form__input--checkbox" id="activity-0" name="activity0">
-      <label for='activity-0' class="form__label">Help with Shopping</label> 
+      <label for='activity-0' class="form__label">Help with Shopping</label>
     </div>
     <div>
       <input type="checkbox" class="form__input form__input--checkbox" id="activity-1" name="activity1">
-      <label for='activity-1' class="form__label">Entertain: I can sing, dance, and make you laugh!</label> 
-    </div>    
+      <label for='activity-1' class="form__label">Entertain: I can sing, dance, and make you laugh!</label>
+    </div>
     <div>
       <input type="checkbox" class="form__input form__input--checkbox" id="activity-2" name="activity2">
       <label for='activity-2' class="form__label">Reading</label>
@@ -77,11 +77,11 @@
   <p class="agree">By clicking the button below, you agree to the Elder Helpers</p>
   <button class="button" type="submit">Volunteer!</button>
 </form>
-<% } else{ %>  
+<% } else{ %>
 
 <form action="/editProfileUser" method="POST" onSubmit="return validateForm();" class='form form--edit-user'>
   <h4 class="form__title">Find volunteers where you need help</h4>
-  
+
   <label for='age' class="form__label">
     <span>Age</span>
   </label>
@@ -91,7 +91,7 @@
     <span>Country</span>
   </label>
   <input type="text" id="country" name="country" class="form__input"/>
-  
+
 
   <label for='email' class="form__label">
     <span>Email</span>
@@ -117,12 +117,12 @@
 
     <div>
       <input type="checkbox" class="form__input form__input--checkbox" id="activity-0" name="activity-0">
-      <label for='activity-0' class="form__label">Help with Shopping</label> 
+      <label for='activity-0' class="form__label">Help with Shopping</label>
     </div>
     <div>
       <input type="checkbox" class="form__input form__input--checkbox" id="activity-1" name="activity-1">
-      <label for='activity-1' class="form__label">Entertain: I can sing, dance, and make you laugh!</label> 
-    </div>    
+      <label for='activity-1' class="form__label">Entertain: I can sing, dance, and make you laugh!</label>
+    </div>
     <div>
       <input type="checkbox" class="form__input form__input--checkbox" id="activity-2" name="activity-2">
       <label for='activity-2' class="form__label">Reading</label>
@@ -188,4 +188,3 @@ return isEmpty(email) || re.test(email);
     $("#imageUpload").click();
 });
 </script>
-
