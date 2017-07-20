@@ -17,15 +17,15 @@ router.get('/where-we-work', function(req, res, next) {
 
 
 router.get('/editProfileUser', function(req, res, next) {
-  var user = req.user
+  var user = req.user;
   res.render('editProfileUser',{user});
 });
 
 
 router.post("/editProfileUser", (req, res, next) => {
   // var userId = req.user
-  console.log("inside post", req.user._id)
-  var userId = req.user._id
+  console.log("inside post", req.user._id);
+  var userId = req.user._id;
 
   let location = {
     type: 'Point',
@@ -34,15 +34,15 @@ router.post("/editProfileUser", (req, res, next) => {
 
   var update = {
     age: req.body.age,
-  }
+  };
 
 
   User.findByIdAndUpdate({ _id: userId },{location,update},{new: true} ,(err, user) => {
     // if the user is different from null
     if (err) {return next(err);
     } else {
-      console.log("secret",user)
-      res.render("secret",{user})
+      console.log("secret",user);
+      res.render("secret",{user});
     }
   });
 });
@@ -51,8 +51,10 @@ router.post("/editProfileUser", (req, res, next) => {
 //to display the volunteers database
 router.get('/volunteersDatabase', function (req, res, next) {
   User.find({}, (err, users) => {
-    if (err) {return next(err) }
-      console.log(users)
+    if (err) {
+      return next(err);
+    }
+      console.log(users);
     res.render('volunteersDatabase', {users});
   });
 });
