@@ -1,11 +1,11 @@
-/*body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#file{
+ width: 300px;
+ height: 300px;
 }
-*/
 
 .page-wrapper {
 
@@ -23,7 +23,7 @@ a {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	/* Set the fixed height of the footer here */
+	/* Set the fixed height of the footer here */q
 	height: 60px;
 	background-color: #f5f5f5;
 }
@@ -142,6 +142,30 @@ a {
 	width: 100%;*/
 }
 
+#map {
+	height: 400px;
+	width: 600px;
+}
+#info-box {
+	float: right;
+  margin: 0 -25px 0 0 ;
+	width : 400px;
+	margin-top: -405px;
+}
+#nursingHome {
+	/*float: right;
+  margin: 0 -25px 0 0 ;
+	width : 400px;
+	margin-top: -405px;*/
+	text-align: justify;
+
+	width: 400px;
+/*	height: 500px;
+	width: 100%;*/
+}
+
+
+
 .agree {
 	margin-top: 15px;
 }
@@ -157,10 +181,13 @@ a {
     cursor: pointer;
 }
 
+
 .pic-box {
 
 	height: 50px;
 	width: 50px;
+
+
 }
 
 .form .form__label,
@@ -176,6 +203,7 @@ a {
 .form-group {
 	border-top: 1px solid #e1e1e1;
 	margin-top: 1em;
+	padding: 1em;
 }
 
 .form .checkbox-group .form__label {
@@ -186,7 +214,9 @@ a {
 	display: block;
 }
 
-.form .form__label {}
+.form .form__label {
+font-weight: normal;
+}
 
 
 .form .form__input {
@@ -200,22 +230,21 @@ a {
 }
 
 
-$input-file-color: grey;
-$input-file-hover-color: black;
 
-input[type=file] {
+
+/* INPUT FILE */
+/*input[type=file] {
   outline: 0;
   opacity: 0;
   pointer-events: none;
   user-select: none;
-}
+}*/
 
-.upload_img {
+.label {
   width: 120px;
   height: 120px;
-  border: 2px dashed $input-file-color;
+  border: 2px dashed grey;
   border-radius: 50%;
-  /*background-image: url(http://lorempixel.com/400/200/);*/
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -225,6 +254,7 @@ input[type=file] {
   cursor: pointer;
   text-align: center;
 }
+
 
 i {
 	display: block;
@@ -252,7 +282,26 @@ i {
 	border-style: solid;
 	margin-bottom: 10px;
 	margin-right: 10px;
+
+.label i {
+  display: block;
+  font-size: 42px;
+  padding-bottom: 16px;
 }
+.label i,
+.label .title {
+  color: grey;
+  transition: 200ms color;
+}
+.label:hover {
+  border: 2px solid black;
+}
+.label:hover i,
+.label:hover .title {
+  color: black;
+
+}
+/*  END INPUT FILE */
 
 
 .button {
