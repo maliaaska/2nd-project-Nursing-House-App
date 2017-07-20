@@ -11,6 +11,7 @@ const session        = require("express-session");
 const auth           = require('./helpers/auth');
 const flash          = require("connect-flash");
 const mongoose       = require("mongoose");
+var multer  = require('multer');
 
 const index          = require('./routes/index');
 const authController = require('./routes/authController');
@@ -42,7 +43,7 @@ app.use(session({
   secret           : "passport-local-strategy",
   resave           : true,
   saveUninitialized: true,
-  cookie           : { maxAge: 60000 }
+  cookie           : { maxAge: 6000000 }
 }));
 
 app.use(flash());
