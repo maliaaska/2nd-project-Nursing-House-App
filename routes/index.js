@@ -38,7 +38,6 @@ router.post("/editProfileUser", (req, res, next) => {
   };
 
 
-
   User.findByIdAndUpdate({ _id: userId },{location,update},{new: true} ,(err, user) => {
     // if the user is different from null
     if (err) {return next(err);
@@ -53,7 +52,10 @@ router.post("/editProfileUser", (req, res, next) => {
 //to display the volunteers database
 router.get('/volunteersDatabase', function (req, res, next) {
   User.find({}, (err, users) => {
-    if (err) {return next(err) }
+
+    if (err) {
+      return next(err);
+    }
       console.log(users);
     res.render('volunteersDatabase', {users});
   });
@@ -61,10 +63,10 @@ router.get('/volunteersDatabase', function (req, res, next) {
 
 //to display the volunteers database
 router.get('/search/:json', function (req, res, next) {
-  console.log("test")
+  console.log("test");
   User.find({}, (err, users) => {
-    if (err) {return next(err) }
-      console.log(users)
+    if (err) {return next(err); }
+      console.log(users);
     res.json(users);
   });
 });
@@ -105,10 +107,6 @@ router.post('/upload', upload.single('photo'), function(req, res){
     }
   });
 });
-
-
-
-
 });
 
 

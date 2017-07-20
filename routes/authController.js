@@ -17,6 +17,7 @@ router.post("/signup", (req, res, next) => {
   var password = req.body.password;
   var role     =  req.body.user;
 
+  console.log('user -> ', req.body);
   if (username === "" || password === "") {
     req.flash('error', 'Indicate username and password' );
     res.render("auth/signup", { "message": req.flash("error") });
@@ -42,14 +43,15 @@ router.post("/signup", (req, res, next) => {
       role: role,
       fullname : req.body.fullname,
       password: hashPass,
+      location: { type: "Point", coordinates: [0,0] }
     });
 
     newUser.save((err) => {
       if (err) {
-        console.log('error', err);
-        req.flash('error', 'The username already exists' );
 
-        res.render("auth/signup", { message: req.flash('error') });
+        console.log('error', err);
+        req.flash('error', 'Problem creating an User' );
+        res.redirect("/signup");
       } else {
 
         passport.authenticate("local")(req, res, function () {

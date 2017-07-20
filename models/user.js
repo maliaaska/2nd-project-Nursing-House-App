@@ -11,7 +11,6 @@ const userSchema = new Schema({
     age: Number,
     background: String,
     activities: String,
-    location: String,
     availability: String,
     location: { type: { type: String }, coordinates: [Number] },
     imageUrl: String,
@@ -24,11 +23,9 @@ const userSchema = new Schema({
   	timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 	});
 
- userSchema.index({ location: '2dsphere' });
+  userSchema.index({ location: '2dsphere' });
 
 const User = mongoose.model("User", userSchema);
-
-
 
 
 module.exports = User;

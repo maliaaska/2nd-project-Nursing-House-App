@@ -50,6 +50,27 @@ html body {
 
 }
 
+.content-main {
+	margin-left: 50px;
+
+}
+.bck-image {
+	position: absolute;
+	height: 800px;
+	width: 100%;
+
+}
+.bck-image::after {
+  content: "";
+  background: url('../images/elderly.jpg');
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
 #map {
  height: 500px;
  width: 100%;
@@ -100,8 +121,33 @@ html body {
 .social-media ul li img {
 	margin: 20px;
 }
+.stripe {
+	position: relative;
+	margin-left: 130px;
+	margin-top: -140px;
+	height: 260px;
+	width: 900px;
 
+
+}
+.stripe::after {
+	content: "";
+	background-color: #B9936C;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+.copy-div{
+	position: relative;
+	margin-top: 400px;
+	margin-left: 550px;
+}
 .copyright {
+
 	font-size: 15px;
 	font-style: italic;
 	margin: 50px 0 0 0;
