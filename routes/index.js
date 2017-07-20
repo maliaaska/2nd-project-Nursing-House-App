@@ -25,25 +25,21 @@ router.get('/editProfileUser', function(req, res, next) {
 router.post("/editProfileUser", (req, res, next) => {
   // var userId = req.user
 
-  // console.log("inside post", req.user._id);
-   var userId = req.user._id;
-   var update = {
-    img: req.body.img,
-    age: req.body.age,
-    phone: req.body.phone,
-    activity0: req.body.activity0,
-    activity1: req.body.activity1,
-    activity2: req.body.activity2,
-    activity3: req.body.activity3,
-    activity4: req.body.activity4,
-    activity5: req.body.activity4,
+  console.log("inside post", req.user._id);
+  var userId = req.user._id;
+
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
   };
-  console.log(update);
+
+  var update = {
+    age: req.body.age,
+  };
 
 
 
-
-  User.findByIdAndUpdate({ _id: userId }, update, (err, user) => {
+  User.findByIdAndUpdate({ _id: userId },{location,update},{new: true} ,(err, user) => {
     // if the user is different from null
     if (err) {return next(err);
     } else {
@@ -60,6 +56,16 @@ router.get('/volunteersDatabase', function (req, res, next) {
     if (err) {return next(err) }
       console.log(users);
     res.render('volunteersDatabase', {users});
+  });
+});
+
+//to display the volunteers database
+router.get('/search/:json', function (req, res, next) {
+  console.log("test")
+  User.find({}, (err, users) => {
+    if (err) {return next(err) }
+      console.log(users)
+    res.json(users);
   });
 });
 
