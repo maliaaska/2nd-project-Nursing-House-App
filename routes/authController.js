@@ -1,11 +1,11 @@
-const express  = require('express');
-const router   = express.Router();
+const express    = require('express');
+const router     = express.Router();
 
 const bcrypt     = require("bcrypt");
 const bcryptSalt = 10;
 const passport   = require("../helpers/passport");
 
-const User     = require("../models/user");
+const User       = require("../models/user");
 
 /* GET users listing. */
 router.get('/signup', function(req, res, next) {
@@ -15,7 +15,7 @@ router.get('/signup', function(req, res, next) {
 router.post("/signup", (req, res, next) => {
   var username = req.body.username;
   var password = req.body.password;
-  var role = req.body.user;
+  var role     =  req.body.user;
 
   if (username === "" || password === "") {
     req.flash('error', 'Indicate username and password' );
@@ -23,9 +23,11 @@ router.post("/signup", (req, res, next) => {
     return;
   }
 
-  User.findOne({ username }, "username", (err, user) => {
+    User.findOne({ username }, "username", (err, user) => {
+
     // if the user is different from null
     if (user !== null) {
+
       req.flash('error', 'The username already exists' );
       res.render("auth/signup", { message: req.flash("error") });
       return;
